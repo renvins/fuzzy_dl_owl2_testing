@@ -6,7 +6,7 @@ This project provides tools for converting ontologies between the OWL2 format an
 
 The project consists of three main parts:
 
-1.  **Configuration (`CONFIG.ini`):** A file for setting the global parameters of the scripts.
+1.  **Converter (`converter.py`):** A script to perform the translation from OWL2 to FuzzyDL and vice versa.
 2.  **Validation (`validate_conversion.py`):** A script to compare two ontologies (original and converted) and verify that the classes, properties, individuals, and axioms match.
 
 -----
