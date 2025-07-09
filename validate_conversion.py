@@ -17,9 +17,6 @@ def compare_properties(original_onto, final_onto):
     original_properties = {p.name for p in original_onto.properties()}
     final_properties = {p.name for p in final_onto.properties()}
 
-    # Note: This includes fuzzyLabel after conversion, we can ignore it if needed
-    final_properties.remove("fuzzyLabel")
-
     if original_properties == final_properties:
         print("Properties match between original and final ontologies.")
     else:
@@ -61,7 +58,7 @@ def validate_conversion(original_path, final_path):
     compare_axioms(original_onto, final_onto)
 
 if __name__ == "__main__":
-    original_path = "./results/persona.owl"
-    final_path = "./results/persona2.owl"
+    original_path = "./results/persone_fuzzy.owl"
+    final_path = "./results/persone_fuzzy_final.owl"
 
     validate_conversion(original_path, final_path)

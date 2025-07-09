@@ -1,0 +1,4 @@
+(define-primitive-concept PersonaAlta *top*)
+(define-primitive-concept PersonaBassa *top*)
+(instance Vincenzo PersonaAlta 0.9)
+(instance Marco PersonaBassa 1.0)
