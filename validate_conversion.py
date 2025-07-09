@@ -5,7 +5,7 @@ def compare_classes(original_onto, final_onto):
     original_classes = {c.name for c in original_onto.classes()}
     final_classes = {c.name for c in final_onto.classes()}
 
-    if original_classes == final_classes
+    if original_classes == final_classes:
         print("Classes match between original and final ontologies.")
     else:
         print("Classes do not match:")
@@ -16,6 +16,10 @@ def compare_properties(original_onto, final_onto):
     # Check if the properties in both ontologies are the same
     original_properties = {p.name for p in original_onto.properties()}
     final_properties = {p.name for p in final_onto.properties()}
+
+    # Note: This includes fuzzyLabel after conversion, we can ignore it if needed
+    final_properties.remove("fuzzyLabel")
+
     if original_properties == final_properties:
         print("Properties match between original and final ontologies.")
     else:
@@ -36,11 +40,28 @@ def compare_individuals(original_onto, final_onto):
 
 def compare_axioms(original_onto, final_onto):
     # This is the most important part, checking if the axioms are the same
-    original_axioms = {str(ax) for ax in original_onto.axioms()}
-    final_axioms = {str(ax) for ax in final_onto.axioms()}
+    original_axioms = list(original_onto.general_class_axioms())
+    final_axioms = list(final_onto.general_class_axioms())
     if original_axioms == final_axioms:
         print("Axioms match between original and final ontologies.")
     else:
         print("Axioms do not match:")
         print("Original axioms:", original_axioms)
         print("Final axioms:", final_axioms)
+
+def validate_conversion(original_path, final_path):
+    # Load the ontologies
+    original_onto = get_ontology(original_path).load()
+    final_onto = get_ontology(final_path).load()
+
+    # Compare classes, properties, individuals, and axioms
+    compare_classes(original_onto, final_onto)
+    compare_properties(original_onto, final_onto)
+    compare_individuals(original_onto, final_onto)
+    compare_axioms(original_onto, final_onto)
+
+if __name__ == "__main__":
+    original_path = "./results/persona.owl"
+    final_path = "./results/persona2.owl"
+
+    validate_conversion(original_path, final_path)
