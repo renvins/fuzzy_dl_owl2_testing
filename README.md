@@ -10,7 +10,7 @@ Below is a list of the tests performed, with the corresponding ontology files an
 
 ### 1. Axiom with Truth Degree (Degree)
 * **Feature Tested**: Assertion of an individual's membership in a class with a numerical degree of truth.
-* **Test File**: `persona_fuzzy.owl`
+* **Test File**: `persone_fuzzy.owl`
 * **Status**: ✅ **SUCCESS**
 * **Observations**: The library correctly interpreted the `<Degree value="..."/>` annotation on a `ClassAssertion` axiom, translating it to the FDL format and converting it back successfully.
 
