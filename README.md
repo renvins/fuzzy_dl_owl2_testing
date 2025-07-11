@@ -1,45 +1,31 @@
-# Fuzzy DL and OWL2 Conversion Testing
+# Conversion Tests for fuzzy_dl_owl2
 
-This project provides tools for converting ontologies between the OWL2 format and Fuzzy Description Logic (FuzzyDL). It also includes a script to validate the consistency of the conversion by comparing the original ontology with the reconverted one.
+This repository contains a set of test ontologies to validate and analyze the behavior of the `fuzzy_dl_owl2` library. The goal is to verify the correct translation of OWL 2 constructs with fuzzy annotations into the FuzzyDL format.
 
-## Description
+---
 
-The project consists of three main parts:
+## Test Summary
 
-1.  **Converter (`converter.py`):** A script to perform the translation from OWL2 to FuzzyDL and vice versa.
-2.  **Validation (`validate_conversion.py`):** A script to compare two ontologies (original and converted) and verify that the classes, properties, individuals, and axioms match.
+Below is a list of the tests performed, with the corresponding ontology files and the results obtained.
 
------
+### 1. Axiom with Truth Degree (Degree)
+* **Feature Tested**: Assertion of an individual's membership in a class with a numerical degree of truth.
+* **Test File**: `persona_fuzzy.owl`
+* **Status**: ✅ **SUCCESS**
+* **Observations**: The library correctly interpreted the `<Degree value="..."/>` annotation on a `ClassAssertion` axiom, translating it to the FDL format and converting it back successfully.
 
-## Usage
+---
 
-### Conversion
+### 2. Fuzzy Modifier
+* **Feature Tested**: Definition of a "modifier" (e.g., `molto`) and its application to a class to create a modified version (e.g., `PersonaMoltoAlta`).
+* **Test File**: `modifier_persona.owl`
+* **Status**: ❌ **FAILED**
+* **Observations**: The converter did not produce an error, but it generated an incomplete `.fdl` file, ignoring the `fuzzyType="modifier"` and `type="modified"` annotations. This suggests the feature is not yet implemented.
 
-The `converter.py` script is used for translation. Inside the file, the main functions are `translate_owl2_to_fdl` and `translate_fdl_to_owl2`.
+---
 
-To perform a conversion, you can modify and run the script directly. For example, to convert an OWL file to FuzzyDL:
-
-```python
-if __name__ == '__main__':
-    translate_owl2_to_fdl("./results/persona.owl", "persona.fdl")
-```
-
-### Validation
-
-After converting an ontology back to its original format, you can use `validate_conversion.py` to ensure that there has been no loss of information.
-
-The script compares:
-
-  * **Classes**
-  * **Properties**
-  * **Individuals**
-  * **Axioms**
-
------
-
-## Dependencies
-
-For the project to work correctly, the following Python libraries are required:
-
-  * **owlready2**
-  * **fuzzy\_dl\_owl2** (the custom library used for the conversion logic)
+### 3. Fuzzy Datatype in Restrictions
+* **Feature Tested**: Definition of a custom fuzzy datatype (e.g., `EtaAnziana`) and its use within an existential restriction (`haEta some EtaAnziana`).
+* **Test File**: `persona_fuzzy_bug.owl`
+* **Status**: ❌ **FAILED (CRASH)**
+* **Observations**: The conversion fails with a `FuzzyOntologyException`, indicating that the library does not support the use of custom datatypes as a range in `DataSomeValuesFrom` restrictions.
