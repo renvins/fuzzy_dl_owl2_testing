@@ -1,0 +1,4 @@
+(define-primitive-concept ConsumoRidotto *top*)
+(define-primitive-concept PreferenzeCliente *top*)
+(define-primitive-concept PrezzoBasso *top*)
+(define-primitive-concept SpazioInterno *top*)
