@@ -20,7 +20,7 @@ Below is a list of the tests performed, with the corresponding ontology files an
 * **Feature Tested**: Definition of a concept as a weighted sum of other base concepts.
 * **Test File**: `weighted_sum_test.owl`
 * **Status**: ❌ **FAILED**
-* **Observations**: The converter produced an incomplete `.fdl` file, only declaring the base concepts as primitive. It ignored the `fuzzyType="concept"` annotation with `type="weightedSum"`, suggesting this feature is not implemented.
+* **Observations**: The converter produced an incomplete `.fdl` file, only declaring the base concepts as primitive. It ignored the `fuzzyType="concept"` annotation with `type="weightedSum"`.
 
 ---
 
@@ -28,7 +28,7 @@ Below is a list of the tests performed, with the corresponding ontology files an
 * **Feature Tested**: Definition of a "modifier" (e.g., `molto`) and its application to a class to create a modified version (e.g., `PersonaMoltoAlta`).
 * **Test File**: `modifier_persona.owl`
 * **Status**: ❌ **FAILED**
-* **Observations**: Similar to the Weighted Sum test, the converter generated an incomplete `.fdl` file, ignoring the `fuzzyType="modifier"` and `type="modified"` annotations. This feature also appears to be unimplemented.
+* **Observations**: Similar to the Weighted Sum test, the converter generated an incomplete `.fdl` file, ignoring the `fuzzyType="modifier"` and `type="modified"` annotations.
 
 ---
 
