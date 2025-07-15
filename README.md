@@ -10,21 +10,29 @@ Below is a list of the tests performed, with the corresponding ontology files an
 
 ### 1. Axiom with Truth Degree (Degree)
 * **Feature Tested**: Assertion of an individual's membership in a class with a numerical degree of truth.
-* **Test File**: `persone_fuzzy.owl`
+* **Test File**: `persona_fuzzy.owl`
 * **Status**: ✅ **SUCCESS**
 * **Observations**: The library correctly interpreted the `<Degree value="..."/>` annotation on a `ClassAssertion` axiom, translating it to the FDL format and converting it back successfully.
 
 ---
 
-### 2. Fuzzy Modifier
-* **Feature Tested**: Definition of a "modifier" (e.g., `molto`) and its application to a class to create a modified version (e.g., `PersonaMoltoAlta`).
-* **Test File**: `modifier_persona.owl`
+### 2. Weighted Sum Concept
+* **Feature Tested**: Definition of a concept as a weighted sum of other base concepts.
+* **Test File**: `weighted_sum_test.owl`
 * **Status**: ❌ **FAILED**
-* **Observations**: The converter did not produce an error, but it generated an incomplete `.fdl` file, ignoring the `fuzzyType="modifier"` and `type="modified"` annotations. This suggests the feature is not yet implemented.
+* **Observations**: The converter produced an incomplete `.fdl` file, only declaring the base concepts as primitive. It ignored the `fuzzyType="concept"` annotation with `type="weightedSum"`, suggesting this feature is not implemented.
 
 ---
 
-### 3. Fuzzy Datatype in Restrictions
+### 3. Fuzzy Modifier
+* **Feature Tested**: Definition of a "modifier" (e.g., `molto`) and its application to a class to create a modified version (e.g., `PersonaMoltoAlta`).
+* **Test File**: `modifier_persona.owl`
+* **Status**: ❌ **FAILED**
+* **Observations**: Similar to the Weighted Sum test, the converter generated an incomplete `.fdl` file, ignoring the `fuzzyType="modifier"` and `type="modified"` annotations. This feature also appears to be unimplemented.
+
+---
+
+### 4. Fuzzy Datatype in Restrictions
 * **Feature Tested**: Definition of a custom fuzzy datatype (e.g., `EtaAnziana`) and its use within an existential restriction (`haEta some EtaAnziana`).
 * **Test File**: `persona_fuzzy_bug.owl`
 * **Status**: ❌ **FAILED (CRASH)**
