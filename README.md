@@ -32,12 +32,12 @@ Below is a list of the tests performed, with the corresponding ontology files an
 * **Weighted Sum Concept**
     * **Test File**: `weighted_sum_test.owl`
     * **Status**: ❌ **FAILED**
-    * **Observations**: The converter ignored the `type="weightedSum"` annotation, suggesting the feature is not implemented.
+    * **Observations**: The converter ignored the `type="weightedSum"` annotation.
 
 * **Fuzzy Modifier**
     * **Test File**: `modifier_test.owl`
     * **Status**: ❌ **FAILED**
-    * **Observations**: The converter ignored the `type="modified"` annotation. This feature also appears to be unimplemented.
+    * **Observations**: The converter ignored the `type="modified"` annotation.
 
 * **Fuzzy Datatype in Restrictions**
     * **Test File**: `fuzzy_datatype_test.owl`
