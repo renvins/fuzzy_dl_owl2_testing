@@ -1,0 +1,3 @@
+(define-primitive-concept Auto *top*)
+(define-primitive-concept Veicolo *top*)
+(define-primitive-concept Auto Veicolo)

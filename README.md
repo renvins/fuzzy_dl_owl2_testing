@@ -20,6 +20,11 @@ Below is a list of the tests performed, with the corresponding ontology files an
     * **Status**: ✅ **SUCCESS**
     * **Observations**: The library correctly parsed and translated the `DisjointWith` axiom between two classes.
 
+* **Subclasses**
+    * **Test File**: `subclass_test.owl`
+    * **Status**: ✅ **SUCCESS**
+    * **Observations**: The library correctly parsed and translated the `SubclassOf` axiom between two classes.
+
 ---
 
 ### 2. Fuzzy Concept Constructors (Failures)
