@@ -25,7 +25,7 @@ Below is a list of the tests performed, with the corresponding ontology files an
 ### 2. Fuzzy Concept Constructors (Failures)
 
 * **Fuzzy Nominals**
-    * **Test File**: `fuzzy_nominal_test.owl`
+    * **Test File**: `nominal_test.owl`
     * **Status**: ❌ **FAILED**
     * **Observations**: The converter ignored the `type="nominal"` annotation, losing the fuzzy semantics.
 
