@@ -15,9 +15,19 @@ Below is a list of the tests performed, with the corresponding ontology files an
     * **Status**: ✅ **SUCCESS**
     * **Observations**: The library correctly interpreted the `<Degree value="..."/>` annotation on a `ClassAssertion` axiom.
 
+* **Disjoint Classes**
+    * **Test File**: `disjoint_test.owl`
+    * **Status**: ✅ **SUCCESS**
+    * **Observations**: The library correctly parsed and translated the `DisjointWith` axiom between two classes.
+
 ---
 
 ### 2. Fuzzy Concept Constructors (Failures)
+
+* **Fuzzy Nominals**
+    * **Test File**: `fuzzy_nominal_test.owl`
+    * **Status**: ❌ **FAILED**
+    * **Observations**: The converter ignored the `type="nominal"` annotation, losing the fuzzy semantics.
 
 * **Weighted Sum Concept**
     * **Test File**: `weighted_sum_test.owl`

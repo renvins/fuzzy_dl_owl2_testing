@@ -1,0 +1,3 @@
+(disjoint Donna Uomo)
+(define-primitive-concept Donna *top*)
+(define-primitive-concept Uomo *top*)
