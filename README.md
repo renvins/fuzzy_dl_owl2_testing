@@ -34,12 +34,6 @@ Below is a list of the tests performed, with the corresponding ontology files an
     * **Status**: ✅ **SUCCESS**
     * **Observations**: Successfully converted the `FuzzyDatatype` concept, including the trapezoidal function in the restriction.
 
-* **Fuzzy Nominals**
-    * **Test File**: `nominal_test.owl`
-    * **Status**: ❌ **FAILED**
-    * **Observations**: The converter generated an error, also in the first conversion step
-    * **Errors**: [Link to the error, related to parsing probably](https://pastebin.com/Tjsp4rcR)
-
 * **Weighted Sum Concept**
     * **Test File**: `weighted_sum_test.owl`
     * **Status**: ❌ **FAILED**
@@ -51,3 +45,12 @@ Below is a list of the tests performed, with the corresponding ontology files an
     * **Status**: ❌ **FAILED**
     * **Observations**: Successfully converted the `FuzzyModifier` concept, but conversion fdl -> owl2 was missing classes
     * **Errors**: [This is what the conversion validator reported](https://pastebin.com/Ftb5xHvp)
+ 
+---
+
+### 3. Not supported yet
+
+* **Fuzzy Nominals**
+    * **Test File**: `nominal_test.owl`
+    * **Status**: ❌ **FAILED**
+    * **Observations**: Throws error due to feature not supported
