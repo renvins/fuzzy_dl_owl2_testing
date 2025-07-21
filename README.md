@@ -43,7 +43,8 @@ Below is a list of the tests performed, with the corresponding ontology files an
 * **Fuzzy Modifier**
     * **Test File**: `modifier_test.owl`
     * **Status**: ❌ **FAILED**
-    * **Observations**: The converter ignored the `type="modified"` annotation.
+    * **Observations**: Successfully converted the `FuzzyModifier` concept, but conversion fdl -> owl2 was missing classes
+    * **Errors**: [This is what the conversion validator reported](https://pastebin.com/Ftb5xHvp)
 
 * **Fuzzy Datatype in Restrictions**
     * **Test File**: `fuzzy_datatype_test.owl`

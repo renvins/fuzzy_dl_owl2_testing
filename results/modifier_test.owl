@@ -42,7 +42,7 @@
     <!-- http://www.semanticweb.org/vince/ontologies/2025/6/modifier_persona#molto -->
 
     <rdfs:Datatype rdf:about="http://www.semanticweb.org/vince/ontologies/2025/6/modifier_persona#molto">
-        <modifier_persona:fuzzyLabel rdf:parseType="Literal"><fuzzyOwl2 fuzzyType="modifier"><Modifier type="linear" c="0.8"/></fuzzyOwl2></modifier_persona:fuzzyLabel>
+        <modifier_persona:fuzzyLabel>&lt;fuzzyOwl2 fuzzyType=&quot;modifier&quot;&gt;&lt;Modifier type=&quot;linear&quot; c=&quot;0.8&quot;&gt;&lt;/Modifier&gt;&lt;/fuzzyOwl2&gt;</modifier_persona:fuzzyLabel>
     </rdfs:Datatype>
     
 
@@ -67,7 +67,7 @@
     <!-- http://www.semanticweb.org/vince/ontologies/2025/6/modifier_persona#PersonaMoltoAlta -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/vince/ontologies/2025/6/modifier_persona#PersonaMoltoAlta">
-        <modifier_persona:fuzzyLabel rdf:parseType="Literal"><fuzzyOwl2 fuzzyType="concept"><Concept type="modified" modifier="molto" base="PersonaAlta"/></fuzzyOwl2></modifier_persona:fuzzyLabel>
+        <modifier_persona:fuzzyLabel>&lt;fuzzyOwl2 fuzzyType=&quot;concept&quot;&gt;&lt;Concept type=&quot;modified&quot; modifier=&quot;molto&quot; base=&quot;PersonaAlta&quot;&gt;&lt;/Concept&gt;&lt;/fuzzyOwl2&gt;</modifier_persona:fuzzyLabel>
     </owl:Class>
 </rdf:RDF>
 
