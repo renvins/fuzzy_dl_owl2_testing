@@ -42,7 +42,7 @@
     <!-- http://www.semanticweb.org/vince/ontologies/2025/6/persona_fuzzy_buggata#EtaAnziana -->
 
     <rdfs:Datatype rdf:about="http://www.semanticweb.org/vince/ontologies/2025/6/persona_fuzzy_buggata#EtaAnziana">
-        <persona_fuzzy_buggata:fuzzyLabel rdf:parseType="Literal"><fuzzyOwl2 fuzzyType="datatype"><Datatype type="trapezoidal" a="55" b="65" c="75" d="85"></Datatype></fuzzyOwl2></persona_fuzzy_buggata:fuzzyLabel>
+        <persona_fuzzy_buggata:fuzzyLabel>&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;&lt;Datatype type=&quot;trapezoidal&quot; a=&quot;55&quot; b=&quot;65&quot; c=&quot;75&quot; d=&quot;85&quot;&gt;&lt;/Datatype&gt;&lt;/fuzzyOwl2&gt;</persona_fuzzy_buggata:fuzzyLabel>
     </rdfs:Datatype>
     
 

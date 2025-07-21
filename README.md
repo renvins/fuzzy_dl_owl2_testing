@@ -49,5 +49,6 @@ Below is a list of the tests performed, with the corresponding ontology files an
 
 * **Fuzzy Datatype in Restrictions**
     * **Test File**: `fuzzy_datatype_test.owl`
-    * **Status**: ❌ **FAILED (CRASH)**
-    * **Observations**: The conversion fails with a `FuzzyOntologyException`, indicating that the library does not support custom datatypes in `DataSomeValuesFrom` restrictions.
+    * **Status**: ❌ **FAILED**
+    * **Observations**: Successfully converted the `FuzzyDatatype` concept, but conversion fdl -> owl2 failed
+    * **Errors**: [The owl -> fdl add (-inf, inf) values to the trapezoidal function](https://github.com/renvins/fuzzy_dl_owl2_testing/blob/master/results/fuzzy_datatype_test.fdl)
