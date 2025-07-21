@@ -43,6 +43,28 @@
 
     <rdfs:Datatype rdf:about="http://www.semanticweb.org/vince/ontologies/2025/6/persona_fuzzy_buggata#EtaAnziana">
         <persona_fuzzy_buggata:fuzzyLabel>&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;&lt;Datatype type=&quot;trapezoidal&quot; a=&quot;55&quot; b=&quot;65&quot; c=&quot;75&quot; d=&quot;85&quot;&gt;&lt;/Datatype&gt;&lt;/fuzzyOwl2&gt;</persona_fuzzy_buggata:fuzzyLabel>
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:intersectionOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
     </rdfs:Datatype>
     
 

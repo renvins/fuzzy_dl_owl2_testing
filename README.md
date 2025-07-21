@@ -27,7 +27,12 @@ Below is a list of the tests performed, with the corresponding ontology files an
 
 ---
 
-### 2. Fuzzy Concept Constructors (Failures)
+### 2. Fuzzy Concept Constructors
+
+* **Fuzzy Datatype in Restrictions**
+    * **Test File**: `fuzzy_datatype_test.owl`
+    * **Status**: ✅ **SUCCESS**
+    * **Observations**: Successfully converted the `FuzzyDatatype` concept, including the trapezoidal function in the restriction.
 
 * **Fuzzy Nominals**
     * **Test File**: `nominal_test.owl`
@@ -46,9 +51,3 @@ Below is a list of the tests performed, with the corresponding ontology files an
     * **Status**: ❌ **FAILED**
     * **Observations**: Successfully converted the `FuzzyModifier` concept, but conversion fdl -> owl2 was missing classes
     * **Errors**: [This is what the conversion validator reported](https://pastebin.com/Ftb5xHvp)
-
-* **Fuzzy Datatype in Restrictions**
-    * **Test File**: `fuzzy_datatype_test.owl`
-    * **Status**: ❌ **FAILED**
-    * **Observations**: Successfully converted the `FuzzyDatatype` concept, but conversion fdl -> owl2 failed
-    * **Errors**: [The owl -> fdl add (-inf, inf) values to the trapezoidal function](https://github.com/renvins/fuzzy_dl_owl2_testing/blob/master/results/fuzzy_datatype_test.fdl)
