@@ -42,9 +42,9 @@
     <!-- http://www.semanticweb.org/vince/ontologies/2025/6/nominals#EssereProprioVincenzo -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/vince/ontologies/2025/6/nominals#EssereProprioVincenzo">
-        <nominals:fuzzyLabel rdf:parseType="Literal"><fuzzyOwl2 fuzzyType="concept">
-    <Concept type="nominal" value="0.75" individual="Vincenzo"/>
-</fuzzyOwl2></nominals:fuzzyLabel>
+        <nominals:fuzzyLabel>&lt;fuzzyOwl2 fuzzyType=&quot;concept&quot;&gt;
+    &lt;Concept type=&quot;nominal&quot; value=&quot;0.75&quot; individual=&quot;Vincenzo&quot;&gt;&lt;/Concept&gt;
+&lt;/fuzzyOwl2&gt;</nominals:fuzzyLabel>
     </owl:Class>
     
 

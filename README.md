@@ -32,7 +32,8 @@ Below is a list of the tests performed, with the corresponding ontology files an
 * **Fuzzy Nominals**
     * **Test File**: `nominal_test.owl`
     * **Status**: ❌ **FAILED**
-    * **Observations**: The converter ignored the `type="nominal"` annotation, losing the fuzzy semantics.
+    * **Observations**: The converter generated an error, also in the first conversion step
+    * **Errors**: [Link to the error, related to parsing probably](https://pastebin.com/Tjsp4rcR)
 
 * **Weighted Sum Concept**
     * **Test File**: `weighted_sum_test.owl`
