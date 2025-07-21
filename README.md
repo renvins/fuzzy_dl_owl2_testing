@@ -37,7 +37,8 @@ Below is a list of the tests performed, with the corresponding ontology files an
 * **Weighted Sum Concept**
     * **Test File**: `weighted_sum_test.owl`
     * **Status**: ❌ **FAILED**
-    * **Observations**: The converter ignored the `type="weightedSum"` annotation.
+    * **Observations**: Successfully converted the `WeightedSum` concept, but conversion fdl -> owl2 failed
+    * **Errors**: [Link to the error, related to syntax probably](https://pastebin.com/R1Wn6Vvp)
 
 * **Fuzzy Modifier**
     * **Test File**: `modifier_test.owl`

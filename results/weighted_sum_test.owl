@@ -48,13 +48,13 @@
     <!-- http://www.semanticweb.org/vince/ontologies/2025/6/concetti_pesati#PreferenzeCliente -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/vince/ontologies/2025/6/concetti_pesati#PreferenzeCliente">
-        <concetti_pesati:fuzzyLabel rdf:parseType="Literal"><fuzzyOwl2 fuzzyType="concept">
-    <Concept type="weightedSum">
-        <Concept type="weighted" value="0.5" base="PrezzoBasso"/>
-        <Concept type="weighted" value="0.3" base="ConsumoRidotto"/>
-        <Concept type="weighted" value="0.2" base="SpazioInterno"/>
-    </Concept>
-</fuzzyOwl2></concetti_pesati:fuzzyLabel>
+        <concetti_pesati:fuzzyLabel>&lt;fuzzyOwl2 fuzzyType=&quot;concept&quot;&gt;
+    &lt;Concept type=&quot;weightedSum&quot;&gt;
+        &lt;Concept type=&quot;weighted&quot; value=&quot;0.5&quot; base=&quot;PrezzoBasso&quot;&gt;&lt;/Concept&gt;
+        &lt;Concept type=&quot;weighted&quot; value=&quot;0.3&quot; base=&quot;ConsumoRidotto&quot;&gt;&lt;/Concept&gt;
+        &lt;Concept type=&quot;weighted&quot; value=&quot;0.2&quot; base=&quot;SpazioInterno&quot;&gt;&lt;/Concept&gt;
+    &lt;/Concept&gt;
+&lt;/fuzzyOwl2&gt;</concetti_pesati:fuzzyLabel>
     </owl:Class>
     
 
