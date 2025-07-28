@@ -3,6 +3,8 @@ from pyowl2 import OWLOntology, OWLAnnotationProperty, IRI, OWLAnnotationAsserti
 from rdflib import URIRef, Namespace, Literal, XSD, RDF
 from pathlib import Path
 from conversion.validator import Validator
+from tests.conftest import run_conversion_and_validation
+
 
 def create_degree_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_degree#")
@@ -31,18 +33,4 @@ def test_degree(test_setup_factory):
     print("\n--- Starting Degree Test ---")
     converter, original_path, final_path = test_setup_factory("test_degree", create_degree_ontology)
 
-    converter.translate_owl2_to_fdl()
-    assert converter.fdl_file.exists(), "FDL file was not created."
-
-    converter.translate_fdl_to_owl2(final_path)
-    assert Path(final_path).exists(), "Final OWL file was not created."
-
-    print("Final file created. Now validating...")
-    validator = Validator(original_path, final_path)
-
-    validator.compare_classes()
-    validator.compare_individuals()
-    validator.compare_properties()
-    validator.compare_axioms()
-
-    print("✅ All assertions passed successfully.")
+    run_conversion_and_validation(converter, original_path, final_path)

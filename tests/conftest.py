@@ -2,6 +2,7 @@ import pytest
 from pathlib import Path
 
 from conversion.converter import Converter
+from conversion.validator import Validator
 
 OUTPUT_DIR = Path("test_outputs")
 
@@ -21,3 +22,20 @@ def test_setup_factory():
 
         return converter, original_owl_path, final_owl_path
     yield _setup_test
+
+def run_conversion_and_validation(converter, original_path, final_path):
+    converter.translate_owl2_to_fdl()
+    assert converter.fdl_file.exists(), "FDL file was not created."
+
+    converter.translate_fdl_to_owl2(final_path)
+    assert Path(final_path).exists(), "Final OWL file was not created."
+
+    print("Final file created. Now validating...")
+    validator = Validator(original_path, final_path)
+
+    validator.compare_classes()
+    validator.compare_individuals()
+    validator.compare_properties()
+    validator.compare_axioms()
+
+    print("✅ All assertions passed successfully.")
