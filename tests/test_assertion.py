@@ -1,7 +1,7 @@
 import pytest
 from pathlib import Path
 
-from pyowl2 import OWLOntology, OWLFullClass, OWLFullIndividual, IRI
+from pyowl2 import OWLOntology, OWLFullClass, OWLFullIndividual, IRI, OWLAnnotationProperty, OWLDeclaration
 from rdflib import URIRef, Namespace
 
 from conversion.validator import Validator
@@ -13,12 +13,15 @@ def create_assertion_ontology(owl_path):
 
     ontology = OWLOntology(reference)
 
+    fuzzy_label = OWLAnnotationProperty(IRI(namespace, "fuzzyLabel"))
+    fuzzy_label_declared = OWLDeclaration(fuzzy_label)
+
     person = OWLFullClass(IRI(namespace, "Person"))
     individual = OWLFullIndividual(IRI(namespace, "Vincenzo"))
 
     individual.add_assertion(person.class_)
 
-    ontology.add_axioms([person, individual])
+    ontology.add_axioms([person, individual, fuzzy_label_declared])
     ontology.save(str(owl_path))
 
 def test_assertion(test_setup_factory):
