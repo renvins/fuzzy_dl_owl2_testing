@@ -1,10 +1,7 @@
-from pyowl2 import OWLOntology, OWLAnnotationProperty, IRI, OWLAnnotationAssertion, OWLFullClass, OWLFullIndividual, \
-    OWLDeclaration, OWLFullDataRange, OWLDatatype, OWLAnnotation, OWLLiteral, OWLClassAssertion
-from rdflib import URIRef, Namespace, Literal, XSD, RDF
-from pathlib import Path
-from conversion.validator import Validator
+from pyowl2 import OWLOntology, OWLAnnotationProperty, IRI, OWLFullClass, OWLFullIndividual, \
+    OWLDeclaration, OWLAnnotation, OWLLiteral, OWLClassAssertion
+from rdflib import URIRef, Namespace, Literal, XSD
 from tests.conftest import run_conversion_and_validation
-
 
 def create_degree_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_degree#")
@@ -22,11 +19,12 @@ def create_degree_ontology(owl_path):
     xml_string = "<fuzzyOwl2 fuzzyType=\"axiom\"><Degree value=\"0.6\"></Degree></fuzzyOwl2>"
     xml_literal = OWLLiteral(Literal(xml_string, datatype=XSD.string))
 
-    annotation = OWLAnnotation(fuzzy_label, xml_literal)
+    marco_is_high = OWLAnnotation(fuzzy_label, xml_literal)
 
-    class_assertion_axiom = OWLClassAssertion(high_person.class_, marco.individual, annotations=[annotation])
+    marco.add_assertion(high_person.class_, annotations=[marco_is_high])
+    vincenzo.add_assertion(low_person.class_)
 
-    ontology.add_axioms([high_person, low_person, marco, vincenzo, OWLDeclaration(fuzzy_label), OWLClassAssertion(low_person.class_, vincenzo.individual), class_assertion_axiom])
+    ontology.add_axioms([high_person, low_person, marco, vincenzo, OWLDeclaration(fuzzy_label)])
     ontology.save(str(owl_path))
 
 def test_degree(test_setup_factory):

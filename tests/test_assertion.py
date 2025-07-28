@@ -1,11 +1,7 @@
-from pathlib import Path
-
 from pyowl2 import OWLOntology, OWLFullClass, OWLFullIndividual, IRI, OWLAnnotationProperty, OWLDeclaration
 from rdflib import URIRef, Namespace
 
-from conversion.validator import Validator
 from tests.conftest import test_setup_factory, run_conversion_and_validation
-
 
 def create_assertion_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_assertion#")
