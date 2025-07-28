@@ -1,5 +1,0 @@
-(define-concept PreferenzeCliente (w-sum [(0.5 PrezzoBasso), (0.3 ConsumoRidotto), (0.2 SpazioInterno)]))
-(define-primitive-concept ConsumoRidotto *top*)
-(define-primitive-concept PreferenzeCliente *top*)
-(define-primitive-concept PrezzoBasso *top*)
-(define-primitive-concept SpazioInterno *top*)

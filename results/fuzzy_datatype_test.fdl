@@ -1,7 +1,0 @@
-(define-fuzzy-concept EtaAnziana trapezoidal(0.0, 100.0, 55.0, 65.0, 75.0, 85.0))
-(define-concept PersonaAnziana (some haEta EtaAnziana))
-(define-primitive-concept Persona *top*)
-(define-primitive-concept PersonaAnziana *top*)
-(functional haEta)
-(range haEta *integer* -100000000 100000000)
-(define-primitive-concept PersonaAnziana Persona)
