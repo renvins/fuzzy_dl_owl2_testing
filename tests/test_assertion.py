@@ -31,11 +31,9 @@ def test_assertion(test_setup_factory):
     converter.translate_fdl_to_owl2(final_path)
     assert Path(final_path).exists(), "Final OWL file was not created."
 
-    # Step 3: Create the Validator with the correct paths
     print("Final file created. Now validating...")
     validator = Validator(original_path, final_path)
 
-    # Step 4: Run all your checks
     validator.compare_classes()
     validator.compare_individuals()
     validator.compare_properties()
