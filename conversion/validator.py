@@ -1,9 +1,10 @@
 from owlready2 import *
+from pathlib import Path
 
 class Validator:
-    def __init__(self, original_path, final_path):
-        self.original_onto = get_ontology(original_path).load()
-        self.final_onto = get_ontology(final_path).load()
+    def __init__(self, original_path: Path, final_path: Path):
+        self.original_onto = get_ontology(str(original_path)).load()
+        self.final_onto = get_ontology(str(final_path)).load()
 
     def compare_classes(self):
         # Check if the classes in both ontologies are the same
