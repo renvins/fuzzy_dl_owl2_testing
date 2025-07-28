@@ -1,4 +1,3 @@
-import pytest
 from pathlib import Path
 
 from pyowl2 import OWLOntology, OWLFullClass, OWLFullIndividual, IRI, OWLAnnotationProperty, OWLDeclaration
@@ -11,7 +10,7 @@ def create_assertion_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_assertion#")
     namespace = Namespace(reference)
 
-    ontology = OWLOntology(reference)
+    ontology = OWLOntology(reference, OWL1_annotations=True)
 
     fuzzy_label = OWLAnnotationProperty(IRI(namespace, "fuzzyLabel"))
     fuzzy_label_declared = OWLDeclaration(fuzzy_label)
