@@ -1,56 +1,15 @@
-# Conversion Tests for fuzzy_dl_owl2
+# Conversion Tests for fuzzy\_dl\_owl2
 
-This repository contains a set of test ontologies to validate and analyze the behavior of the `fuzzy_dl_owl2` library. The goal is to verify the correct translation of OWL 2 constructs with fuzzy annotations into the FuzzyDL format.
+This repository contains a set of test ontologies to validate and analyze the behavior of the `fuzzy_dl_owl2` library. The goal is to verify the correct translation of OWL 2 constructs with fuzzy annotations into the FuzzyDL format and vice versa.
 
----
+The library is designed to interoperate between the standard OWL 2 ontology language and the FuzzyDL reasoner, allowing you to leverage fuzzy reasoning capabilities while maintaining compatibility with the OWL ecosystem.
 
-## Test Summary
+## How to Run the Tests
 
-Below is a list of the tests performed, with the corresponding ontology files and the results obtained.
+To verify the correct functioning of the conversion and validate all test ontologies, simply run the following command from the main project directory:
 
-### 1. Standard Axioms (Successes)
+```bash
+python -m pytest -v -s
+```
 
-* **Axiom with Truth Degree**
-    * **Test File**: `axiom_test.owl`
-    * **Status**: ✅ **SUCCESS**
-    * **Observations**: The library correctly interpreted the `<Degree value="..."/>` annotation on a `ClassAssertion` axiom.
-
-* **Disjoint Classes**
-    * **Test File**: `disjoint_test.owl`
-    * **Status**: ✅ **SUCCESS**
-    * **Observations**: The library correctly parsed and translated the `DisjointWith` axiom between two classes.
-
-* **Subclasses**
-    * **Test File**: `subclass_test.owl`
-    * **Status**: ✅ **SUCCESS**
-    * **Observations**: The library correctly parsed and translated the `SubclassOf` axiom between two classes.
-
----
-
-### 2. Fuzzy Concept Constructors
-
-* **Fuzzy Datatype in Restrictions**
-    * **Test File**: `fuzzy_datatype_test.owl`
-    * **Status**: ✅ **SUCCESS**
-    * **Observations**: Successfully converted the `FuzzyDatatype` concept, including the trapezoidal function in the restriction.
-
-* **Weighted Sum Concept**
-    * **Test File**: `weighted_sum_test.owl`
-    * **Status**: ❌ **FAILED**
-    * **Observations**: Successfully converted the `WeightedSum` concept, but conversion fdl -> owl2 failed
-    * **Errors**: [Link to the error, related to syntax probably](https://pastebin.com/R1Wn6Vvp)
-
-* **Fuzzy Modifier**
-    * **Test File**: `modifier_test.owl`
-    * **Status**: ❌ **FAILED**
-    * **Observations**: Successfully converted the `FuzzyModifier` concept, but conversion fdl -> owl2 was missing classes
-    * **Errors**: [This is what the conversion validator reported](https://pastebin.com/Ftb5xHvp)
- 
----
-
-### 3. Not supported yet
-
-* **Fuzzy Nominals**
-    * **Test File**: `nominal_test.owl`
-    * **Status**: ❌ **FAILED**
-    * **Observations**: Throws error due to feature not supported
+This command will automatically discover and run all the tests defined in the `tests/` directory, providing a detailed report of any successes or failures. Each test handles creating an OWL ontology, converting it to FuzzyDL, converting it back to OWL, and finally comparing the original ontology with the final one to ensure their equivalence.
