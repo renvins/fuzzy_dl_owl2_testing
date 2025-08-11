@@ -1,8 +1,8 @@
 import pytest
 from pathlib import Path
 
-from conversion.converter import Converter
-from conversion.validator import Validator
+from converter import Converter
+from validator import Validator
 
 OUTPUT_DIR = Path("test_outputs")
 

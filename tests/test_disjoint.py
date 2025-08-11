@@ -1,7 +1,7 @@
 from pyowl2 import OWLOntology, OWLAnnotationProperty, IRI, OWLFullClass, OWLDisjointClasses, OWLDeclaration
 from rdflib import URIRef, Namespace
 
-from tests.conftest import run_conversion_and_validation
+from conftest import run_conversion_and_validation
 
 def create_disjoint_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_disjoint#")

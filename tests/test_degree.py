@@ -1,7 +1,7 @@
 from pyowl2 import OWLOntology, OWLAnnotationProperty, IRI, OWLFullClass, OWLFullIndividual, \
-    OWLDeclaration, OWLAnnotation, OWLLiteral, OWLClassAssertion
+    OWLDeclaration, OWLAnnotation, OWLLiteral
 from rdflib import URIRef, Namespace, Literal, XSD
-from tests.conftest import run_conversion_and_validation
+from conftest import run_conversion_and_validation
 
 def create_degree_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_degree#")

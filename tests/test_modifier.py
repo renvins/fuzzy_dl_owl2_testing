@@ -2,7 +2,7 @@ from pyowl2 import OWLOntology, OWLFullClass, IRI, OWLAnnotationProperty, OWLDat
     OWLLiteral, OWLDeclaration
 from rdflib import URIRef, Namespace, Literal, XSD
 
-from tests.conftest import run_conversion_and_validation
+from conftest import run_conversion_and_validation
 
 def create_modifier_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_modifier#")

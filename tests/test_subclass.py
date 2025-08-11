@@ -1,7 +1,7 @@
 from pyowl2 import OWLOntology, OWLFullClass, IRI, OWLSubClassOf, OWLAnnotationProperty, OWLDeclaration
 from rdflib import URIRef, Namespace
 
-from tests.conftest import run_conversion_and_validation
+from conftest import run_conversion_and_validation
 
 def create_subclass_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_subclass#")

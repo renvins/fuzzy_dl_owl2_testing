@@ -1,2 +1,5 @@
 logs
-.idea
+.python-version
+.venv
+test_outputs
+tests/__pycache__
