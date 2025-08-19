@@ -6,7 +6,7 @@ def create_quasi_sugeno_ontology(owl_path):
     reference = URIRef("https://www.semanticweb.org/vince/ontologies/2025/6/test_quasi_sugeno#")
     namespace = Namespace(reference)
 
-    ontology = OWLOntology(reference)
+    ontology = OWLOntology(reference, OWL1_annotations=True)
     fuzzy_label = OWLAnnotationProperty(IRI(namespace, "fuzzyLabel"))
 
     a_class = OWLFullClass(IRI(namespace, "A"))
